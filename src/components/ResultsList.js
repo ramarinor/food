@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import ResultsDetail from './ResultsDetail';
 
-const ResultsList = ({ title, results }) => {
+const ResultsList = ({ title, results, navigate }) => {
   return (
     <View style={styles.containerStyle}>
       <Text style={styles.titleStyle}>{title}</Text>
@@ -11,7 +11,9 @@ const ResultsList = ({ title, results }) => {
         showsHorizontalScrollIndicator={false}
         data={results}
         keyExtractor={(result) => result.id}
-        renderItem={({ item }) => <ResultsDetail result={item} />}
+        renderItem={({ item }) => (
+          <ResultsDetail result={item} navigate={navigate} />
+        )}
       />
     </View>
   );
