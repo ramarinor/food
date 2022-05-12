@@ -12,7 +12,7 @@ const Searchbar = ({ term, onTermChange, onTermSubmit }) => {
         autoCapitalize='none'
         autoCorrect={false}
         onChangeText={onTermChange}
-        onBlur={onTermSubmit}
+        onEndEditing={onTermSubmit}
       />
     </View>
   );
